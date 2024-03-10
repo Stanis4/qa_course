@@ -5,6 +5,14 @@ import math
  коли введене значення не може бути перетворене на число (ValueError),"""
 
 
+class NegativeNumberIsNotAcceptableException(Exception):
+    pass
+
+
+class IncorrectFractionalNumberException(Exception):
+    pass
+
+
 def find_square_root():
     print("Find Square root of number. Acceptable format: 7 --- 7.0 --- 2/5 --- 2 2/5")
     try:
@@ -46,14 +54,6 @@ def _refine_number(number):
         return float(result[0])
 
 
-class NegativeNumberIsNotAcceptableException(Exception):
-    pass
-
-
-class IncorrectFractionalNumberException(Exception):
-    pass
-
-
 """3. Розширити роботу нашого калькулятора, додавши можливість користувачеві вводити числа до тих пір,
  поки він не вирішить вийти, вводячи певне ключове слово (наприклад, "вихід")."""
 
@@ -74,7 +74,7 @@ def calculator():
             else:
                 number2 = float(number2)
 
-            action = input("Action: ")
+            action = input("Action (enter 'q' to quit): ")
             if action == exit_word:
                 break
 
