@@ -13,6 +13,10 @@ class IncorrectFractionalNumberException(Exception):
     pass
 
 
+class UnexpectedErrorException(Exception):
+    pass
+
+
 def find_square_root():
     print("Find Square root of number. Acceptable format: 7 --- 7.0 --- 2/5 --- 2 2/5")
     try:
@@ -27,8 +31,8 @@ def find_square_root():
             print(f"Square root of {number}:", result)
     except ValueError as error:
         print("Only numbers are allowed:", error.__repr__())
-    except Exception as error:
-        print("Unexpected error appeared:", error)
+    except UnexpectedErrorException as error:
+        print("Unexpected error appeared. Try again.", error)
     finally:
         print("Calculation is finished")
 
@@ -104,4 +108,4 @@ def calculator():
 
 
 find_square_root()
-calculator()
+# calculator()
