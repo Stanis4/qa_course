@@ -4,14 +4,13 @@
 def custom_range_generator(start: int = 0, stop: int = 1, step: int = 1):
     if step == 0:
         raise ValueError("Zero step is not possible")
+    value = start
 
     if start < stop and step > 0:
-        value = start
         while value < stop:
             yield value
             value += step
     elif start > stop and step < 0:
-        value = start
         while value > stop:
             yield value
             value += step
