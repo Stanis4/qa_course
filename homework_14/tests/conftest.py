@@ -1,6 +1,5 @@
 import pytest
 from homework_14.store.store_facade import StoreFacade
-from homework_14.store.catalog import Catalog
 
 
 @pytest.fixture(name='add_phone')
