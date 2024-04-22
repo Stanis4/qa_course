@@ -29,6 +29,7 @@ class TestStore:
         list_after_before_remove = len(self.store.show_catalog())
         assert list_len_before_remove > list_after_before_remove , f"'{brand}' was not removed from catalog"
 
+    @pytest.mark.linked
     @pytest.mark.negative
     @pytest.mark.parametrize('brand', ['Asus'])
     def test_remove_non_existing_phone(self, brand):
