@@ -10,7 +10,7 @@ class TextBoxPage(BasePage):
     def __init__(self, driver: WebDriver):
         super().__init__(driver)
 
-    def fill_all_fields(self):
+    def fill_all_personal_info_fields(self):
         person_info = next(generated_person())
         full_name = person_info.full_name
         email = person_info.email

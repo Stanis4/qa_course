@@ -10,6 +10,6 @@ class HomePage(BasePage):
         super().__init__(driver)
 
     def count_number_of_cards(self):
-        card_list = self.elements_are_visible(self.locators.CATEGORY_CARDS_LIST)
-        return len(card_list)
+        return len(self.elements_are_visible(self.locators.CATEGORY_CARDS_LIST))
+
 

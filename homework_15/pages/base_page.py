@@ -14,6 +14,10 @@ class BasePage:
     def driver(self):
         return self.__driver
 
+    @property
+    def action_chains(self):
+        return ActionChains(driver=self.driver)
+
     def wait_until(self, locator, condition, timeout=10) -> WebElement:
         return wait(self.driver, timeout).until(condition(locator))
 
@@ -47,21 +51,13 @@ class BasePage:
 
     def double_click(self, locator):
         element = self.element_is_visible(locator)
-        action = ActionChains(self.driver)
-        action.double_click(element)
-        action.perform()
+        self.action_chains.double_click(element).perform()
 
     def right_click(self, locator):
         element = self.element_is_visible(locator)
-        action = ActionChains(self.driver)
-        action.context_click(element)
-        action.perform()
+        self.action_chains.context_click(element).perform()
 
     def send_keys(self, locator, value):
         self.go_to_element(self.element_is_present(locator))
         condition = ec.visibility_of_element_located
         self.wait_until(locator, condition).send_keys(value)
-
-
-
-
