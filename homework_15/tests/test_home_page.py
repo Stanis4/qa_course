@@ -4,7 +4,6 @@ from homework_15.pages.home_page import HomePage
 from homework_15 import config
 
 
-@pytest.mark.url(config.browser.base_url)
 class TestHomePage:
     def test_list_of_cards(self, driver):
         home_page = HomePage(driver)

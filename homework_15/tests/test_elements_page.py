@@ -3,7 +3,7 @@ from homework_15.pages.elements_page import TextBoxPage
 from homework_15 import config
 
 
-@pytest.mark.url(config.browser.text_box_url)
+@pytest.mark.route('text-box')
 class TestTextBox:
     def test_text_box(self, driver):
         text_box_page = TextBoxPage(driver)

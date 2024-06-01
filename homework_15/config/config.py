@@ -9,5 +9,3 @@ class BaseConfig(BaseSettings):
 class BrowserConfig(BaseConfig):
     type: str
     base_url: str
-    text_box_url: str
-    buttons_url: str

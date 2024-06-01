@@ -1,9 +1,8 @@
 import pytest
 from homework_15.pages.buttons_page import ButtonsPage
-from homework_15 import config
 
 
-@pytest.mark.url(config.browser.buttons_url)
+@pytest.mark.route('buttons')
 class TestButtons:
     def test_buttons(self, driver):
         buttons_page = ButtonsPage(driver)
