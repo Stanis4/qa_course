@@ -11,3 +11,7 @@ class BrowserConfig(BaseConfig):
     base_url: str
     text_box_url: str
     buttons_url: str
+
+
+class APIConfig(BaseConfig):
+    url: str
