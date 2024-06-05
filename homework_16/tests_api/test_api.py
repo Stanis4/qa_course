@@ -28,8 +28,7 @@ def test_add_new_pet(generate_random_pet_id, clean_up_pet):
 
 
 def test_get_pet(create_pet, generate_random_pet_id):
-    pet_id = create_pet['id']
-    response = pet_api.find_pet_by_id(pet_id)
+    response = pet_api.find_pet_by_id(create_pet['id'])
     assert response.status_code == 200
     validate_schema(response.json(), schemas.ADD_PET)
 
